@@ -74,26 +74,7 @@ volcano_plot
 dev.off()
 
 
-
-
-volcano_plot = 
-  ggplot(tt, aes(x=logFC, y=log_trans, fill=color))+
-  geom_point(size= 2, shape=16, position = 'jitter')+
-  # geom_hline(yintercept= 2.65351010743292, color='gray', size=1)+
-  # geom_vline(xintercept = c(-1.5,1.5), color='gray', size=1)+
-  geom_point(data=tt[tt$logFC<0 & tt$adj.P.Val<0.05,], color='blue', shape=16, size=4) +
-  geom_point(data=tt[tt$logFC>0 & tt$adj.P.Val<0.05,], color='red', shape=16, size=4) +
-  xlab('Log2 Fold Change (LFC)')+
-  ylab('Log10(FDR)')+
-  geom_hline(yintercept = 1.30102999566398, size=1, linetype='dashed') + 
-  theme_classic()
-
-volcano_plot
-png(filename = 'volcano_plot.png', res = 600, width = 4800, height = 3600)
-volcano_plot
-dev.off()
-
-# GO biological process input and collapse the GO terms and pool the gene members. 
+# GO biological process input and collapse based on the GO terms and pool the gene members. 
 GO_BP <- read.table('GO_Biological_Process_2018_table.txt', header = F, sep = '\t', stringsAsFactors = F)
 GO_BP_simple <- GO_BP[,c(1,9)]
 # head(GO_BP_simple$Genes)
