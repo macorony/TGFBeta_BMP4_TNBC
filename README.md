@@ -16,15 +16,6 @@ This repository contains the R code and documentation for microarray data analys
 - ggrepel
 - tidyverse
 - dplyr
-- GEOquery
-- beadarray
-- illuminaHumanv1.db
-- illuminaHumanv2.db
-- illuminaHumanv3.db
-- BeadArrayUseCases
-- GOstats
-- GenomicRanges
-- Biostrings
 ```
 
 ## Data Structure
